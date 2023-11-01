@@ -7,7 +7,7 @@
 
         <variable
             name="userViewModel"
-            type="org.freedu.usercontactmvvm.ViewModel.UserViewModel" />
+            type="org.freedu.usercontactmvvm.viewmodel.UserViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +22,6 @@
             android:layout_margin="20dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="10dp"
-            app:cardUseCompatPadding="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -30,7 +29,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="20dp">
+                android:padding="5dp">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/text1"
@@ -74,15 +73,15 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
-                    android:text="SAVE"
+                    android:onClick="@{()->userViewModel.saveOrUpdate()}"
+                    android:text="@={userViewModel.saveOrUpdateButtonText}"
                     android:textColor="@color/black"
                     app:cornerRadius="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/text1"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/text1"
                     app:layout_constraintTop_toTopOf="@+id/text1"
-                    app:layout_constraintVertical_bias="0.476"
+                    app:layout_constraintVertical_bias="1.0"
                     app:strokeColor="#020202"
                     app:strokeWidth="1dp" />
 
@@ -91,15 +90,15 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/white"
-                    android:text="DELETE"
+                    android:onClick="@{()->userViewModel.clearAllOrDelete()}"
+                    android:text="@={userViewModel.clearAllOrDeleteButtonText}"
                     android:textColor="@color/black"
                     app:cornerRadius="10dp"
                     app:layout_constraintBottom_toBottomOf="@+id/text2"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toEndOf="@+id/text2"
                     app:layout_constraintTop_toTopOf="@+id/text2"
-                    app:layout_constraintVertical_bias="0.476"
+                    app:layout_constraintVertical_bias="0.153"
                     app:strokeColor="#020202"
                     app:strokeWidth="1dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -112,7 +111,6 @@
             android:layout_margin="20dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="10dp"
-            app:cardUseCompatPadding="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +121,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:background="@color/white"
                 tools:listitem="@layout/item_layout" />
 
         </androidx.cardview.widget.CardView>

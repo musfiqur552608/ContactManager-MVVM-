@@ -1,4 +1,4 @@
-package org.freedu.usercontactmvvm.ViewModel
+package org.freedu.usercontactmvvm.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
