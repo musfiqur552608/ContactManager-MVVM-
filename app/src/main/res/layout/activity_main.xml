@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="userViewModel"
+            type="org.freedu.usercontactmvvm.ViewModel.UserViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,7 +46,8 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/nameEtxt"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent"
+                        android:text="@={userViewModel.inputName}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
@@ -57,7 +65,8 @@
                         android:id="@+id/emailEtxt"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:inputType="textEmailAddress" />
+                        android:inputType="textEmailAddress"
+                        android:text="@={userViewModel.inputEmail}" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <ImageView
@@ -101,11 +110,11 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
-                android:background="@color/white"
-                tools:listitem="@layout/item_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp" />
+                android:layout_margin="20dp"
+                android:background="@color/white"
+                tools:listitem="@layout/item_layout" />
 
         </androidx.cardview.widget.CardView>
 
